@@ -1,0 +1,128 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>CTFd Challenge Downloader</title>
+    <link rel="stylesheet" href="popup.css" />
+  </head>
+  <body>
+    <main>
+      <div id="appShell" class="app-shell">
+      <div class="topbar">
+        <h1>CTFd Downloader</h1>
+        <div class="brand top-right">
+          <span class="brand-dot"></span>
+          <span id="brandLine"></span>
+        </div>
+      </div>
+      <p id="site" class="muted">Detecting current site...</p>
+
+      <div class="actions">
+        <button id="scanBtn" class="secondary">Scan Challenges</button>
+        <button id="exportBtn">Download Selected</button>
+      </div>
+      <div id="userNotice" class="user-notice hidden"></div>
+      <div id="status" class="status" aria-live="polite"></div>
+
+      <section class="panel">
+        <div class="panel-title">Download Mode</div>
+        <div class="inline">
+          <label class="row compact">
+            <input type="radio" name="exportMode" value="direct" checked />
+            <span>Direct Download</span>
+          </label>
+          <label class="row compact">
+            <input type="radio" name="exportMode" value="zip" />
+            <span>Single ZIP</span>
+          </label>
+          <button id="dryRunBtn" class="tiny" type="button">Estimate Size</button>
+        </div>
+      </section>
+
+      <section class="panel">
+        <div class="panel-title">Filters</div>
+        <div class="grid-2">
+          <label class="field">
+            <span>Category</span>
+            <select id="filterCategory"></select>
+          </label>
+          <label class="field">
+            <span>Solve State</span>
+            <select id="filterSolved">
+              <option value="all">All</option>
+              <option value="solved">Solved</option>
+              <option value="unsolved">Unsolved</option>
+            </select>
+          </label>
+        </div>
+      </section>
+
+      <section class="panel">
+        <div class="panel-title">Options</div>
+        <div class="grid-2">
+          <label class="row">
+            <input type="checkbox" id="downloadFiles" checked />
+            <span>Download attached files</span>
+          </label>
+          <label class="row">
+            <input type="checkbox" id="includeHintDetails" />
+            <span>Include hint details</span>
+          </label>
+          <label class="row">
+            <input type="checkbox" id="skipKnown" />
+            <span>Skip previously downloaded files</span>
+          </label>
+        </div>
+      </section>
+
+      <div class="toolbar">
+        <div class="quick">
+          <button id="selectAllBtn" class="tiny" type="button">Select all</button>
+          <button id="selectNoneBtn" class="tiny" type="button">Select none</button>
+        </div>
+      </div>
+
+      <div id="summary" class="summary">No scan yet.</div>
+      <section id="progressWrap" class="progress-wrap hidden">
+        <div class="progress-head">
+          <span id="progressTitle" class="progress-title">Download Progress</span>
+          <span id="progressCount" class="progress-count">0/0</span>
+        </div>
+        <div class="progress-bar">
+          <div id="progressFill" class="progress-fill"></div>
+        </div>
+        <div id="progressMeta" class="progress-meta">Idle</div>
+        <div id="progressDetails" class="progress-details hidden"></div>
+      </section>
+      <div id="preview" class="preview"></div>
+      <details class="logs-wrap">
+        <summary>Logs</summary>
+        <div id="logs" class="logs"></div>
+      </details>
+      </div>
+      <div id="scanOverlay" class="scan-overlay hidden" aria-live="polite">
+        <div class="scan-card">
+          <div class="scan-spinner" aria-hidden="true"></div>
+          <div id="scanOverlayTitle" class="scan-title">Scanning challenges...</div>
+          <div class="brand scan-brand">
+            <span class="brand-dot"></span>
+            <span id="scanBrandLine"></span>
+          </div>
+          <div id="scanOverlayMeta" class="scan-sub">Please keep the CTF tab open.</div>
+        </div>
+      </div>
+      <div id="resultOverlay" class="result-overlay hidden" aria-live="polite">
+        <div class="result-card">
+          <div id="resultIcon" class="result-icon ok"></div>
+          <div id="resultTitle" class="result-title">Export Complete</div>
+          <div id="resultMessage" class="result-message"></div>
+          <div id="resultDetails" class="result-details hidden"></div>
+          <button id="resultCloseBtn" class="tiny result-close" type="button">Close</button>
+        </div>
+      </div>
+    </main>
+
+    <script src="popup.js"></script>
+  </body>
+</html>

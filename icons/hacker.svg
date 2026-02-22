@@ -1,0 +1,41 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" role="img" aria-label="Hacker icon">
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#0a241f"/>
+      <stop offset="100%" stop-color="#060d15"/>
+    </linearGradient>
+    <radialGradient id="hood" cx="50%" cy="42%" r="68%">
+      <stop offset="0%" stop-color="#29394b"/>
+      <stop offset="100%" stop-color="#0a1019"/>
+    </radialGradient>
+    <linearGradient id="visor" x1="0" y1="0.5" x2="1" y2="0.5">
+      <stop offset="0%" stop-color="#00f7a9"/>
+      <stop offset="100%" stop-color="#8ef2ff"/>
+    </linearGradient>
+  </defs>
+
+  <circle cx="256" cy="256" r="236" fill="url(#bg)"/>
+  <g opacity="0.22" stroke="#2fffa4" stroke-width="2">
+    <path d="M48 60v392"/>
+    <path d="M88 45v422"/>
+    <path d="M128 35v442"/>
+    <path d="M168 30v452"/>
+    <path d="M208 26v460"/>
+    <path d="M248 24v464"/>
+    <path d="M288 26v460"/>
+    <path d="M328 30v452"/>
+    <path d="M368 35v442"/>
+    <path d="M408 45v422"/>
+    <path d="M448 60v392"/>
+  </g>
+
+  <path d="M56 368C70 164 169 66 256 52c87 14 186 112 200 316-30 78-106 126-200 126S86 446 56 368Z" fill="url(#hood)"/>
+  <ellipse cx="256" cy="258" rx="114" ry="136" fill="#101824"/>
+  <ellipse cx="256" cy="238" rx="106" ry="52" fill="url(#visor)" stroke="#b2f9ff" stroke-width="6"/>
+  <path d="M256 188v100" stroke="#b7fbff" stroke-width="4" opacity="0.85"/>
+  <path d="M198 334c14 20 35 29 58 29 23 0 44-9 58-29" fill="none" stroke="#7dffca" stroke-width="8" stroke-linecap="round"/>
+  <ellipse cx="214" cy="216" rx="12" ry="12" fill="#dffeff" opacity="0.45"/>
+  <ellipse cx="296" cy="214" rx="8" ry="8" fill="#dffeff" opacity="0.38"/>
+  <ellipse cx="256" cy="438" rx="164" ry="34" fill="#000" opacity="0.28"/>
+  <circle cx="256" cy="256" r="232" fill="none" stroke="#3affb4" stroke-opacity="0.55" stroke-width="8"/>
+</svg>
